@@ -1,5 +1,7 @@
 require "sinatra"
 require "sinatra/activerecord"
+require_relative 'linebot'
+
 
 set :database, {adapter: "sqlite3", database: "app.sqlite3"}
 
@@ -12,7 +14,7 @@ class Event < ActiveRecord::Base
 end
 
 get "/" do
-  "<h1>Hello, world!</h1>"
+  LineBot.post_message("Accessed!")
 end
 
 post '/webhook/' do

@@ -12,3 +12,5 @@ gem "sqlite3", "~> 1.5"
 gem "rake", "~> 13.0"
 
 gem "puma", "~> 6.0"
+
+gem "dotenv", "~> 2.8"
