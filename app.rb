@@ -1,20 +1,12 @@
 require "sinatra"
 require "sinatra/activerecord"
 require_relative 'linebot'
-
+Dir["/models/*.rb"].each {|file| require file }
 
 set :database, {adapter: "sqlite3", database: "app.sqlite3"}
 
-class User < ActiveRecord::Base
-  has_many :events
-end
-
-class Event < ActiveRecord::Base
-  belongs_to :user
-end
-
 get "/" do
-  LineBot.post_message("Accessed!")
+  "<h1>Hello world! #{User.all}"
 end
 
 post '/webhook/' do
