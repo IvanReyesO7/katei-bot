@@ -1,7 +1,6 @@
 require "sinatra"
-require "sinatra/activerecord"
 require_relative 'linebot'
-Dir["/models/*.rb"].each {|file| require file }
+Dir["/models/*.rb"].each {|file| require_relative file }
 
 set :database, {adapter: "sqlite3", database: "app.sqlite3"}
 
