@@ -1,11 +1,13 @@
 require "sinatra"
 require_relative 'linebot'
-Dir["/models/*.rb"].each {|file| require_relative file }
+require_relative "models/user"
+require_relative "models/event"
+
 
 set :database, {adapter: "sqlite3", database: "app.sqlite3"}
 
 get "/" do
-  "<h1>Hello world! #{User.all}"
+  
 end
 
 post '/webhook/' do
