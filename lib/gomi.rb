@@ -5,3 +5,5 @@ class Gomi
     LineBot.post_message(message)
   end
 end
+
+Gomi.send_message
