@@ -4,6 +4,8 @@ require_relative "models/user"
 require_relative "models/event"
 
 require_relative "lib/gomi"
+require_relative "lib/moenai_gomi"
+require_relative "lib/gomi"
 
 
 
@@ -15,5 +17,11 @@ end
 
 post '/webhook/' do
   puts request.body.read
+end
+
+get '/test-enpoints/' do
+  require_relative "lib/gomi"
+  require_relative "lib/moenai_gomi"
+  require_relative "lib/kane"
 end
 
