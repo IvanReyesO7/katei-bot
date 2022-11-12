@@ -27,4 +27,4 @@ jobs:
         TIMETREE_TOKEN: ${{ secrets.TIMETREE_TOKEN }}
         CALENDAR_ID: ${{ secrets.CALENDAR_ID }}
       run: |
-        ruby lib/time_tree
+        ruby lib/time_tree.rb
