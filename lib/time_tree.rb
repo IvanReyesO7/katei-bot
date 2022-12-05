@@ -7,8 +7,7 @@ end
   
 client = TimeTree::OAuthApp::Client.new
 calendar = client.calendars.first
-events = calendar.upcoming_events
-events = calendar.upcoming_events(days: 1, timezone: 'JST')
+events = calendar.upcoming_events(days: 0, timezone: 'JST')
 
 if !events.empty?
   events_arr = []
